@@ -27,10 +27,6 @@ GENTICS.Aloha.Align.lastAlignment = '';
  * Initialize the plugin and set initialize flag on true
  */
 GENTICS.Aloha.Align.init = function () {
-	
-	if (GENTICS.Aloha.Align.settings.alignment != undefined)
-        GENTICS.Aloha.Align.alignment = GENTICS.Aloha.Align.settings.alignment;
-	
 	this.createButtons();
 	
 	var that = this;
