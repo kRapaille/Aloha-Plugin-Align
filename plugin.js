@@ -14,12 +14,12 @@ GENTICS.Aloha.Align.languages = ['en','fr'];
 GENTICS.Aloha.Align.config = ['right','left','center','justify'];
 
 /**
- * Alignment
+ * Alignment wanted by the user
  */
 GENTICS.Aloha.Align.alignment = '';
 
 /**
- * Last alignment
+ * Alignment of the selection before modification
  */
 GENTICS.Aloha.Align.lastAlignment = '';
 
@@ -113,7 +113,7 @@ GENTICS.Aloha.Align.createButtons = function () {
     this.alignRightButton = new GENTICS.Aloha.ui.Button({
       'iconClass' : 'GENTICS_button_align GENTICS_button_align_right',
       'size' : 'small',
-      'onclick' : function () { that.align('right' , this); },
+      'onclick' : function () { that.align('right'); },
       'tooltip' : GENTICS.Aloha.i18n(GENTICS.Aloha, 'button.alignright.tooltip'),
       'toggle' : true
     });
@@ -179,18 +179,17 @@ GENTICS.Aloha.Align.align = function ( tempAlignment ) {
     
     if (GENTICS.Aloha.activeEditable) {
         if ( this.findAlignMarkup( range ) ) {
-            this.removeAlign( );
+            this.removeAlign();
         } else {
-        	this.insertAlign( );
+        	this.insertAlign();
         }
     }
-	
 };
 
 /**
  * Align the selection
  */
-GENTICS.Aloha.Align.insertAlign = function ( ) {
+GENTICS.Aloha.Align.insertAlign = function () {
 	
 	var that = this;
     
@@ -200,8 +199,6 @@ GENTICS.Aloha.Align.insertAlign = function ( ) {
     }
     // current selection or cursor position
     var range = GENTICS.Aloha.Selection.getRangeObject();
-    
-    //alert(jQuery(range).css('text-align'));
     
     range.findMarkup(function() {
         jQuery(this).css('text-align', that.alignment);
@@ -236,7 +233,7 @@ GENTICS.Aloha.Align.insertAlign = function ( ) {
 /**
  * Remove the alignment
  */
-GENTICS.Aloha.Align.removeAlign = function ( ) {
+GENTICS.Aloha.Align.removeAlign = function () {
 
     var range = GENTICS.Aloha.Selection.getRangeObject();
     
