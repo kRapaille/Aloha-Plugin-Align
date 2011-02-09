@@ -35,7 +35,67 @@ GENTICS.Aloha.Align.init = function () {
 	GENTICS.Aloha.EventRegistry.subscribe(GENTICS.Aloha, 'editableActivated', function (e, params) {
 		that.applyButtonConfig(params.editable.obj);
 	});
+	
+	// add the event handler for selection change
+    GENTICS.Aloha.EventRegistry.subscribe(GENTICS.Aloha, 'selectionChanged', function(event, rangeObject) {
+    	if (GENTICS.Aloha.activeEditable) {
+    		that.buttonPressed(rangeObject);
+    	}
+    });
 };
+
+GENTICS.Aloha.Align.buttonPressed = function (rangeObject) {
+	
+	var that = this;
+
+	rangeObject.findMarkup(function() {
+        that.alignment = jQuery(this).css('text-align');
+    }, GENTICS.Aloha.activeEditable.obj);
+	
+	if(this.alignment != this.lastAlignment)
+	{
+		switch(this.lastAlignment)
+		{
+			case 'right':
+				this.alignRightButton.setPressed(false);
+				break;
+				
+			case 'left':
+				this.alignLeftButton.setPressed(false);
+				break;
+				
+			case 'center':
+				this.alignCenterButton.setPressed(false);
+				break;
+				
+			case 'justify':
+				this.alignJustifyButton.setPressed(false);
+				break;
+		}
+		
+		switch(this.alignment)
+		{
+			case 'right':
+				this.alignRightButton.setPressed(true);
+				break;
+				
+			case 'center':
+				this.alignCenterButton.setPressed(true);
+				break;
+				
+			case 'justify':
+				this.alignJustifyButton.setPressed(true);
+				break;
+				
+			default:
+				this.alignLeftButton.setPressed(true);
+				this.alignment  = 'left';
+				break;
+		}
+	}
+	
+	this.lastAlignment = this.alignment;
+}
 
 /**
  * applys a configuration specific for an editable
