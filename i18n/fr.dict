@@ -1,4 +1,4 @@
-button.alignright.tooltip=Alignement sur la droite
-button.alignleft.tooltip=Alignement sur la gauche
-button.aligncenter.tooltip=Alignement au centre
+button.alignright.tooltip=Aligner à droite
+button.alignleft.tooltip=Aligner à gauche
+button.aligncenter.tooltip=Centrer
 button.alignjustify.tooltip=Alignement justifié

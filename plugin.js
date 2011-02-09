@@ -140,7 +140,7 @@ GENTICS.Aloha.Align.createButtons = function () {
       'iconClass' : 'GENTICS_button_align GENTICS_button_align_left',
       'size' : 'small',
       'onclick' : function () { that.align('left'); },
-      'tooltip' : GENTICS.Aloha.i18n(GENTICS.Aloha, 'button.alignleft.tooltip'),
+      'tooltip' : that.i18n('button.alignleft.tooltip'),
       'toggle' : true
     });
     
@@ -148,7 +148,7 @@ GENTICS.Aloha.Align.createButtons = function () {
     GENTICS.Aloha.FloatingMenu.addButton(
       'GENTICS.Aloha.continuoustext',
       this.alignLeftButton,
-      GENTICS.Aloha.i18n(GENTICS.Aloha, 'floatingmenu.tab.format'),
+      that.i18n('floatingmenu.tab.format'),
       1
     );
     
@@ -157,7 +157,7 @@ GENTICS.Aloha.Align.createButtons = function () {
       'iconClass' : 'GENTICS_button_align GENTICS_button_align_center',
       'size' : 'small',
       'onclick' : function () { that.align('center'); },
-      'tooltip' : GENTICS.Aloha.i18n(GENTICS.Aloha, 'button.aligncenter.tooltip'),
+      'tooltip' : that.i18n('button.aligncenter.tooltip'),
       'toggle' : true
     });
     
@@ -165,7 +165,7 @@ GENTICS.Aloha.Align.createButtons = function () {
     GENTICS.Aloha.FloatingMenu.addButton(
       'GENTICS.Aloha.continuoustext',
       this.alignCenterButton,
-      GENTICS.Aloha.i18n(GENTICS.Aloha, 'floatingmenu.tab.format'),
+      that.i18n('floatingmenu.tab.format'),
       1
     );
     
@@ -174,7 +174,7 @@ GENTICS.Aloha.Align.createButtons = function () {
       'iconClass' : 'GENTICS_button_align GENTICS_button_align_right',
       'size' : 'small',
       'onclick' : function () { that.align('right'); },
-      'tooltip' : GENTICS.Aloha.i18n(GENTICS.Aloha, 'button.alignright.tooltip'),
+      'tooltip' : that.i18n('button.alignright.tooltip'),
       'toggle' : true
     });
     
@@ -182,7 +182,7 @@ GENTICS.Aloha.Align.createButtons = function () {
     GENTICS.Aloha.FloatingMenu.addButton(
       'GENTICS.Aloha.continuoustext',
       this.alignRightButton,
-      GENTICS.Aloha.i18n(GENTICS.Aloha, 'floatingmenu.tab.format'),
+      that.i18n('floatingmenu.tab.format'),
       1
     );
     
@@ -191,7 +191,7 @@ GENTICS.Aloha.Align.createButtons = function () {
       'iconClass' : 'GENTICS_button_align GENTICS_button_align_justify',
       'size' : 'small',
       'onclick' : function () { that.align('justify'); },
-      'tooltip' : GENTICS.Aloha.i18n(GENTICS.Aloha, 'button.alignjustify.tooltip'),
+      'tooltip' : that.i18n('button.alignjustify.tooltip'),
       'toggle' : true
     });
     
@@ -199,7 +199,7 @@ GENTICS.Aloha.Align.createButtons = function () {
     GENTICS.Aloha.FloatingMenu.addButton(
       'GENTICS.Aloha.continuoustext',
       this.alignJustifyButton,
-      GENTICS.Aloha.i18n(GENTICS.Aloha, 'floatingmenu.tab.format'),
+      that.i18n('floatingmenu.tab.format'),
       1
     );
     
