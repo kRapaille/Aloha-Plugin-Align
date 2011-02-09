@@ -215,7 +215,7 @@ GENTICS.Aloha.Align.findAlignMarkup = function ( range ) {
 	
 	var that = this;
 		
-	if ( typeof range == 'undefined' ) {
+	if ( typeof range === 'undefined' ) {
         var range = GENTICS.Aloha.Selection.getRangeObject();   
     }
 	if ( GENTICS.Aloha.activeEditable ) {
@@ -301,7 +301,7 @@ GENTICS.Aloha.Align.removeAlign = function () {
     	
     	// Remove the alignment
     	range.findMarkup(function() {
-            jQuery(this).css('text-align', 'inherit');
+            jQuery(this).css('text-align', '');
         }, GENTICS.Aloha.activeEditable.obj);
     	
         // set focus back to editable
