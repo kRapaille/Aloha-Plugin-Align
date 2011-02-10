@@ -260,9 +260,10 @@ GENTICS.Aloha.Align.insertAlign = function () {
     // current selection or cursor position
     var range = GENTICS.Aloha.Selection.getRangeObject();
     
-    range.findMarkup(function() {
-        jQuery(this).css('text-align', that.alignment);
-    }, GENTICS.Aloha.activeEditable.obj);
+    var parents = range.getStartContainerParents (GENTICS.Aloha.activeEditable.obj);
+	jQuery.each(parents, function (index, domObj) {
+		jQuery(domObj).css('text-align', that.alignment);
+	});
 	
 	if(this.alignment != this.lastAlignment)
 	{
@@ -299,10 +300,10 @@ GENTICS.Aloha.Align.removeAlign = function () {
     
     if ( this.findAlignMarkup( range ) ) {
     	
-    	// Remove the alignment
-    	range.findMarkup(function() {
-            jQuery(this).css('text-align', '');
-        }, GENTICS.Aloha.activeEditable.obj);
+    	var parents = range.getStartContainerParents (GENTICS.Aloha.activeEditable.obj);
+    	jQuery.each(parents, function (index, domObj) {
+    		jQuery(domObj).css('text-align', '');
+    	});
     	
         // set focus back to editable
         GENTICS.Aloha.activeEditable.obj[0].focus();
